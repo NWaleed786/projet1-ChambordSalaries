@@ -5,6 +5,7 @@ require_once("fonctions.php");
 $salaries = getSalaries();
 ?>
 
+<div class="container my-5">
 <h2>Liste des salariés</h2>
 
 <a href="ajouter.php" class="btn btn-success mb-3">Ajouter salarié</a>
@@ -23,13 +24,13 @@ $salaries = getSalaries();
 
 <?php foreach($salaries as $s) { ?>
 <tr>
-    <td><?= $s['id'] ?></td>
-    <td><?= $s['nom'] ?></td>
-    <td><?= $s['prenom'] ?></td>
-    <td><?= $s['date_naissance'] ?></td>
-    <td><?= $s['date_embauche'] ?></td>
-    <td><?= $s['salaire'] ?></td>
-    <td><?= $s['service'] ?></td>
+    <td><?= htmlspecialchars($s['id']) ?></td>
+    <td><?= htmlspecialchars($s['nom']) ?></td>
+    <td><?= htmlspecialchars($s['prenom']) ?></td>
+    <td><?= htmlspecialchars($s['date_naissance']) ?></td>
+    <td><?= htmlspecialchars($s['date_embauche']) ?></td>
+    <td><?= htmlspecialchars($s['salaire']) ?></td>
+    <td><?= htmlspecialchars($s['service']) ?></td>
     <td>
         <a href="modifier.php?id=<?= $s['id'] ?>" class="btn btn-primary btn-sm">Modifier</a>
         <a href="supprimer.php?id=<?= $s['id'] ?>" class="btn btn-danger btn-sm"
@@ -53,5 +54,6 @@ $salaries = getSalaries();
     <li><?= $service['service'] ?> : <?= $service['total'] ?></li>
 <?php } ?>
 </ul>
+</div>
 
 <?php require_once("footer.html"); ?>

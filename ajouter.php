@@ -22,17 +22,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 require_once("header.html");
 ?>
 
+<div class="container my-5">
 <h2>Ajouter salarié</h2>
 
 <form method="post">
-    <input type="text" name="nom" class="form-control mb-2" placeholder="Nom" required>
-    <input type="text" name="prenom" class="form-control mb-2" placeholder="Prénom" required>
+    <input type="text" name="nom" class="form-control mb-2" required>
+    <input type="text" name="prenom" class="form-control mb-2" required>
     <input type="date" name="date_naissance" class="form-control mb-2" required>
     <input type="date" name="date_embauche" class="form-control mb-2" required>
     <input type="number" name="salaire" class="form-control mb-2" required>
     <input type="text" name="service" class="form-control mb-2" required>
-
     <button class="btn btn-success">Enregistrer</button>
 </form>
+</div>
 
 <?php require_once("footer.html"); ?>
